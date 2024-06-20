@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   background-color: yellow;
 }
@@ -12,8 +18,40 @@ body {
 
 .greenbox {
   background-color: green;
-  border-radius: 50px;
+  border-radius: 10px;
   width: 90vw;
+}
+
+.bluebox {
+  background-color: blue;
+  color: white;
+  border-radius: 10px;
+  width: 2vw;
+  margin: 10px;
+}
+
+.size1 {
+  width: 20px;
+}
+
+.size2 {
+  width: 100px;
+}
+
+.size3 {
+  width: 150px;
+}
+
+.size4 {
+  width: 80px;
+}
+
+.size5 {
+  width: 150px;
+}
+
+.size6 {
+  width: 50px;
 }
 
 /*Number 1*/
@@ -24,54 +62,13 @@ body {
   justify-content: space-between;
 }
 
-.list-flex-one-number-one {
-  background-color: blue;
-  color: white;
-  border-radius: 50%;
-  margin: 10px;
-}
-
-.list-flex-one-number-two {
-  background-color: blue;
-  color: white;
-  border-radius: 50%;
-  margin: 10px;
-}
-
-.list-flex-one-number-three {
-  background-color: blue;
-  color: white;
-  border-radius: 50%;
-  margin: 10px;
-}
-
 /*Number 2*/
 
 .list-flex-two {
   list-style-type: none;
   display: flex;
   justify-content: space-evenly;
-}
-
-.list-flex-two-number-one {
-  background-color: blue;
-  color: white;
-  border-radius: 50%;
-  margin: 10px;
-}
-
-.list-flex-two-number-two {
-  background-color: blue;
-  color: white;
-  border-radius: 50%;
-  margin: 10px;
-}
-
-.list-flex-two-number-three {
-  background-color: blue;
-  color: white;
-  border-radius: 50%;
-  margin: 10px;
+  flex-grow: 3;
 }
 
 /*Number 3*/
@@ -82,46 +79,10 @@ body {
   justify-content: space-evenly;
 }
 
-.list-flex-three-number-one {
-  background-color: blue;
-  color: white;
-  border-radius: 50%;
-}
-
-.list-flex-three-number-two {
-  background-color: blue;
-  color: white;
-  border-radius: 50%;
-}
-
-.list-flex-three-number-three {
-  background-color: blue;
-  color: white;
-  border-radius: 50%;
-}
-
 /*Number 4*/
 
 .list-flex-four {
   list-style-type: none;
   display: flex;
   justify-content: space-evenly;
-}
-
-.list-flex-four-number-one {
-  background-color: blue;
-  color: white;
-  border-radius: 50%;
-}
-
-.list-flex-four-number-two {
-  background-color: blue;
-  color: white;
-  border-radius: 50%;
-}
-
-.list-flex-four-number-three {
-  background-color: blue;
-  color: white;
-  border-radius: 50%;
 }
