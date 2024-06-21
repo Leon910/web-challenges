@@ -51,8 +51,6 @@ console.log(rating);
 */
 
 // --v-- write your code here --v--
-sales = sales + 50;
-sales = sales + 100;
 
 function logBookData() {
   console.log(`Title: ${title}`);
@@ -60,6 +58,9 @@ function logBookData() {
   console.log(`Rating: ${rating}`);
   console.log(`Sales: ${sales}`);
 }
+
+sales = sales + 50;
+sales = sales + 100;
 
 logBookData();
 // --^-- write your code here --^--
