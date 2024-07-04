@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello</title>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <section>
+        <h2>Hello World!</h2>
+        <form data-js="form-data">
+          <label for="firstName">First Name</label>
+          <input
+            name="firstName"
+            id="firstName"
+            data-js="first-name"
+            required
+          />
+          <label for="lastName">Last Name</label>
+          <input name="lastName" id="lastName" data-js="last-name" />
+          <button>Generate Email</button>
+        </form>
+        <span data-js="generated-email">...</span>
+      </section>
+    </main>
+  </body>
+</html>
