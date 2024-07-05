@@ -7,19 +7,21 @@ console.clear();
   - the rating
   - the number of sales
 
+
+
 /*
 // --v-- write your code here --v--
 
 */
-let title = "The Lord of the Javascript";
-let author = "Mario";
-let rating = 4.2;
-let sales = 120;
+// let title = "The Lord of the Javascript";
+// let author = "Mario";
+// let rating = 4.2;
+// let sales = 120;
 
-console.log(`Title: ${title}`);
-console.log(`Author: ${author}`);
-console.log(`Rating: ${rating}`);
-console.log(`Sales: ${sales}`);
+// console.log(`Title: ${title}`);
+// console.log(`Author: ${author}`);
+// console.log(`Rating: ${rating}`);
+// console.log(`Sales: ${sales}`);
 
 // --^-- write your code here --^--
 
@@ -36,10 +38,10 @@ Then log all variables to the console again.
 */
 
 // --v-- write your code here --v--
-sales = sales + 50;
-rating = rating + 0.3;
-console.log(sales);
-console.log(rating);
+// sales = sales + 50;
+// rating = rating + 0.3;
+// console.log(sales);
+// console.log(rating);
 // --^-- write your code here --^--
 
 /*
@@ -50,17 +52,26 @@ console.log(rating);
  - Now increase the number of sales 2 more times and log the data after each increase.
 */
 
-// --v-- write your code here --v--
+// // --v-- write your code here --v--
 
-function logBookData() {
-  console.log(`Title: ${title}`);
-  console.log(`Author: ${author}`);
-  console.log(`Rating: ${rating}`);
-  console.log(`Sales: ${sales}`);
-}
+// function logBookData() {
+//   console.log(`Title: ${title}`);
+//   console.log(`Author: ${author}`);
+//   console.log(`Rating: ${rating}`);
+//   console.log(`Sales: ${sales}`);
+// }
 
-sales = sales + 50;
-sales = sales + 100;
+// sales = sales + 50;
+// sales = sales + 100;
 
-logBookData();
+// logBookData();
 // --^-- write your code here --^--
+
+let bookTitle = "The Lord of the Javascript";
+let author = "Mario";
+let rating = 4.2;
+let numberSales = 120;
+console.log(bookTitle);
+console.log(author);
+console.log(rating);
+console.log(numberSales);
