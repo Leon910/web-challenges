@@ -1,0 +1,17 @@
+body {
+  background-color: rgb(161, 144, 176);
+}
+
+div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: #2f4f4f; /* Dark slate gray */
+  color: #ffffff;
+}
