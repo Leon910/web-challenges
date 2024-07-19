@@ -4,7 +4,7 @@ export default function App() {
   return (
     <>
       <Greeting name="Leon" />
-      <Greeting isCoach />
+      <Greeting name="Marcus" isCoach />
     </>
   );
 }

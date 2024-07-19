@@ -14,7 +14,7 @@
     "@babel/plugin-proposal-private-property-in-object": "7.21.11"
   },
   "scripts": {
-    "start": "react-scripts start"
+    "start": "BROWSER=chrome react-scripts start"
   },
   "nf": {
     "template": "react-minimal"
