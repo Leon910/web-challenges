@@ -1,4 +1,4 @@
-import Image from "./components/Image";
+import Image from "./Image";
 import logo from "../img/logo.jpg";
 
 export function Logo() {
