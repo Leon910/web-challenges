@@ -49,7 +49,7 @@ export default function EntriesSection() {
       </Tabs>
 
       <div className="entries-section__entries">
-        {entries.map((entry) => (
+        {entries.map((entry, index) => (
           <Fragment key={entry.id}>
             <Entry
               key={entry.id}
@@ -57,7 +57,7 @@ export default function EntriesSection() {
               motto={entry.motto}
               notes={entry.notes}
             />
-            <Divider />
+            {index < entries.length - 1 && <Divider />}
           </Fragment>
         ))}
       </div>
