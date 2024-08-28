@@ -9,7 +9,7 @@ export default function Title1() {
 
   return (
     <>
-      <Link href="/volumes">Overview Page</Link>
+      <Link href="/">Overview Page</Link>
       <h1>{volume.title}</h1>
       <p>{volumes.description}</p>
       <ul>
