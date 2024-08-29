@@ -7,7 +7,11 @@ export default function VolumeDetail() {
   const router = useRouter();
   const { slug } = router.query;
 
-  const volumeTitle = volumes.find((volume) => volume.slug === slug);
+  const volumeIndex = volumes.findIndex((volume) => volume.slug === slug);
+
+  const volumeTitle = volumes[volumeIndex];
+  const nextVolume = volumes[volumeIndex + 1];
+  const prevVolume = volumes[volumeIndex - 1];
 
   if (!volumeTitle) {
     return <p>Volume not found.</p>;
@@ -33,6 +37,20 @@ export default function VolumeDetail() {
         width={140}
         alt="Cover"
       />
+      {prevVolume ? (
+        <div>
+          <Link href={`/volumes/${prevVolume.slug}`}>
+            Previous Volume: {prevVolume.title}
+          </Link>
+        </div>
+      ) : null}
+      {nextVolume ? (
+        <div>
+          <Link href={`/volumes/${nextVolume.slug}`}>
+            Next Volume: {nextVolume.title}
+          </Link>
+        </div>
+      ) : null}
     </>
   );
 }
