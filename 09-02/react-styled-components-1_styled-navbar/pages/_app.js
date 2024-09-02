@@ -27,13 +27,13 @@ export default function App({ Component, pageProps }) {
       <StyledNav>
         <StyledList>
           <li>
-            <Link href="/">Home</Link>
+            <NavbarLink href="/">Home</NavbarLink>
           </li>
           <li>
-            <Link href="/about">About</Link>
+            <NavbarLink href="/about">About</NavbarLink>
           </li>
           <li>
-            <Link href="/contact">Contact</Link>
+            <NavbarLink href="/contact">Contact</NavbarLink>
           </li>
         </StyledList>
       </StyledNav>
