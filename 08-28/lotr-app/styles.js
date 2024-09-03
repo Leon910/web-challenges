@@ -3,7 +3,7 @@ import { Lora } from "next/font/google";
 
 const lora = Lora({ subsets: ["latin"], style: ["normal", "italic"] });
 
-export default createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
   *,
   *::before,
   *::after {
@@ -15,7 +15,7 @@ export default createGlobalStyle`
     font-family: ${lora.style.fontFamily}, serif;
     @media (prefers-color-scheme: dark) {
       background-color: var(--color-earth);
-      color: var()(--color-clouds);
+      color: var(--color-clouds);
     }
       
     ${({ theme }) =>
@@ -25,3 +25,5 @@ export default createGlobalStyle`
         color: var(--color-clouds);
       `}
   }`;
+
+export default GlobalStyle;
