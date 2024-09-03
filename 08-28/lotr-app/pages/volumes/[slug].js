@@ -3,6 +3,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import styled from "styled-components";
+import ArrowLeft from "public/icons/arrow-left.svg";
+import ArrowRight from "public/icons/arrow-right.svg";
+import Chevron from "public/icons/chevron-left.svg";
 
 export default function VolumeDetail() {
   const router = useRouter();
@@ -22,6 +25,7 @@ export default function VolumeDetail() {
 
   return (
     <>
+      <Chevron />
       <Link href="/">Overview Page</Link>
       <h1>{title}</h1>
       <p>{description}</p>
@@ -44,6 +48,7 @@ export default function VolumeDetail() {
       {prevVolume ? (
         <div>
           <Link href={`/volumes/${prevVolume.slug}`}>
+            <ArrowLeft />
             Previous Volume: {prevVolume.title}
           </Link>
         </div>
@@ -52,6 +57,7 @@ export default function VolumeDetail() {
         <div>
           <Link href={`/volumes/${nextVolume.slug}`}>
             Next Volume: {nextVolume.title}
+            <ArrowRight />
           </Link>
         </div>
       ) : null}
