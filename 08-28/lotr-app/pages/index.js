@@ -25,7 +25,7 @@ export default function Volumes() {
         {volumes.map((volume) => (
           <li key={volume.slug}>
             <Link href={`/volumes/${volume.slug}`}>
-              <Image
+              <StyleImage
                 src={volume.cover}
                 alt={`Cover image of ${volume.title}`}
                 width={126}
@@ -47,4 +47,11 @@ const StyleDisplayList = styled.ul`
   flex-wrap: wrap;
   justify-content: space-between;
   list-style: none;
+`;
+
+const StyleImage = styled.img`
+  box-shadow: var(--box-shadow-book);
+  &:hover {
+    box-shadow: var(--box-shadow-book--hover);
+  }
 `;

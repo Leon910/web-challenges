@@ -1,6 +1,6 @@
 import { volumes } from "@/lib/data";
 import Link from "next/link";
-
+import Image from "next/image";
 import { useRouter } from "next/router";
 import styled from "styled-components";
 import ArrowLeft from "public/icons/arrow-left.svg";
@@ -37,12 +37,7 @@ export default function VolumeDetail() {
             </li>
           ))}
         </ul>
-        <StyleImage
-          src={cover}
-          height={230}
-          width={140}
-          alt={`Cover of ${title}`}
-        />
+        <Image src={cover} height={230} width={140} alt={`Cover of ${title}`} />
       </BookStyling>
       {prevVolume ? (
         <div>
@@ -72,11 +67,4 @@ const BookStyling = styled.div`
   justify-content: space-between;
   align-items: center;
   color: white;
-`;
-
-const StyleImage = styled.img`
-  box-shadow: var(--box-shadow-book);
-  &:hover {
-    box-shadow: var(--box-shadow-book--hover);
-  }
 `;
