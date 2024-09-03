@@ -18,7 +18,7 @@ export default function VolumeDetail() {
     return <p>Volume not found.</p>;
   }
 
-  const { title, description, books, color } = volumeTitle;
+  const { title, description, cover, books, color } = volumeTitle;
 
   return (
     <>
@@ -34,10 +34,11 @@ export default function VolumeDetail() {
           ))}
         </ul>
         <Image
-          src="/the-fellowship-of-the-ring.png"
+          src={cover}
           height={230}
           width={140}
-          alt="Cover"
+          alt={`Cover of ${title}`}
+          priority={true}
         />
       </BookStyling>
       {prevVolume ? (

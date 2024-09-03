@@ -1,7 +1,7 @@
 import { createGlobalStyle, css } from "styled-components";
 import { Lora } from "next/font/google";
 
-const lora = Lora({ subsets: ["latin"] });
+const lora = Lora({ subsets: ["latin"], style: ["normal", "italic"] });
 
 export default createGlobalStyle`
   *,
@@ -12,7 +12,7 @@ export default createGlobalStyle`
 
   body {
     margin: 0;
-    font-family: ${lora.style.fontFamily}, system-ui;
+    font-family: ${lora.style.fontFamily}, serif;
     @media (prefers-color-scheme: dark) {
       background-color: var(--color-earth);
       color: var()(--color-clouds);
