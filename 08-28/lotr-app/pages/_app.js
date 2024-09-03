@@ -1,9 +1,12 @@
 import GlobalStyle from "../styles";
+import { createGlobalStyle } from "styled-components";
 
-export default function App({ Component, pageProps }) {
+const theme = "dark";
+
+export default function App({ Component, pageProps, theme }) {
   return (
     <>
-      <GlobalStyle />
+      <GlobalStyle theme={theme} />
       <Component {...pageProps} />
     </>
   );

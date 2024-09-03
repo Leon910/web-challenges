@@ -2,6 +2,7 @@ import { volumes } from "@/lib/data";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import styled from "styled-components";
 
 export default function VolumeDetail() {
   const router = useRouter();
@@ -17,26 +18,28 @@ export default function VolumeDetail() {
     return <p>Volume not found.</p>;
   }
 
-  const { title, description, books } = volumeTitle;
+  const { title, description, books, color } = volumeTitle;
 
   return (
     <>
       <Link href="/">Overview Page</Link>
       <h1>{title}</h1>
       <p>{description}</p>
-      <ul>
-        {books.map((book, index) => (
-          <li key={index}>
-            <strong>{book.ordinal}:</strong> {book.title}
-          </li>
-        ))}
-      </ul>
-      <Image
-        src="/the-fellowship-of-the-ring.png"
-        height={230}
-        width={140}
-        alt="Cover"
-      />
+      <BookStyling $color={color}>
+        <ul>
+          {books.map((book, index) => (
+            <li key={index}>
+              <strong>{book.ordinal}:</strong> {book.title}
+            </li>
+          ))}
+        </ul>
+        <Image
+          src="/the-fellowship-of-the-ring.png"
+          height={230}
+          width={140}
+          alt="Cover"
+        />
+      </BookStyling>
       {prevVolume ? (
         <div>
           <Link href={`/volumes/${prevVolume.slug}`}>
@@ -54,3 +57,13 @@ export default function VolumeDetail() {
     </>
   );
 }
+
+const BookStyling = styled.div`
+  background-color: ${({ $color }) => $color};
+  display: flex;
+  gap: 0.5rem;
+  padding: 20px;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+`;
