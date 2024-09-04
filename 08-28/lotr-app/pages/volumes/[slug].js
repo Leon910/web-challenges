@@ -26,9 +26,9 @@ export default function VolumeDetail() {
   return (
     <>
       <Chevron />
-      <Link href="/">Overview Page</Link>
-      <h1>{title}</h1>
-      <p>{description}</p>
+      <StyleLink href="/">Overview Page</StyleLink>
+      <StyleTitle>{title}</StyleTitle>
+      <StyleDescription>{description}</StyleDescription>
       <BookStyling $color={color}>
         <ul>
           {books.map((book, index) => (
@@ -41,23 +41,34 @@ export default function VolumeDetail() {
       </BookStyling>
       {prevVolume ? (
         <div>
-          <Link href={`/volumes/${prevVolume.slug}`}>
+          <StyleLink href={`/volumes/${prevVolume.slug}`}>
             <ArrowLeft />
-            Previous Volume: {prevVolume.title}
-          </Link>
+            Previous Volume: <LineBreakDiv />
+            {prevVolume.title}
+          </StyleLink>
         </div>
       ) : null}
       {nextVolume ? (
-        <div>
-          <Link href={`/volumes/${nextVolume.slug}`}>
-            Next Volume: {nextVolume.title}
+        <StyleLinkContainer>
+          <StyleLink href={`/volumes/${nextVolume.slug}`}>
+            Next Volume:
+            <LineBreakDiv />
+            {nextVolume.title}
             <ArrowRight />
-          </Link>
-        </div>
+          </StyleLink>
+        </StyleLinkContainer>
       ) : null}
     </>
   );
 }
+
+const StyleTitle = styled.h1`
+  padding: 10px;
+`;
+
+const StyleDescription = styled.p`
+  padding: 10px 20px;
+`;
 
 const BookStyling = styled.div`
   background-color: ${({ $color }) => $color};
@@ -67,4 +78,25 @@ const BookStyling = styled.div`
   justify-content: space-between;
   align-items: center;
   color: white;
+`;
+
+const StyleLinkContainer = styled.div`
+  display: flex;
+  justify-content: end;
+  flex-direction: row;
+  padding: 20px 10px 10px 20px;
+`;
+
+const StyleLink = styled(Link)`
+  font-size: small;
+  text-decoration: none;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
+const LineBreakDiv = styled.div`
+  padding-top: 2px; /* Adjust spacing as needed */
+  color: gray; /* Example of styling after the break */
 `;
