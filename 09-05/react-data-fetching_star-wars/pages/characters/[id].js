@@ -38,11 +38,11 @@ export default function Character() {
   return (
     <Layout>
       <Card
-        id={data.id}
+        id={id}
         name={data.name}
         height={data.height}
-        eyeColor={data.eye_Color}
-        birthYear={data.birth_Year}
+        eyeColor={data.eye_color}
+        birthYear={data.birth_year}
       />
     </Layout>
   );
