@@ -4,9 +4,9 @@ import { useState } from "react";
 export default function HomePage() {
   const [GenerateAIAnswer, setGenerateAIAnswer] = useState("");
   console.log(GenerateAIAnswer);
-  const [personalInfo, setPersonalInfo] = useState([]);
+  const [personalInfo, setPersonalInfo] = useState("");
   console.log(personalInfo);
-  const [jobDescription, setJobDescription] = useState([]);
+  const [jobDescription, setJobDescription] = useState("");
   console.log(jobDescription);
 
   const handleSubmit = async (event) => {
