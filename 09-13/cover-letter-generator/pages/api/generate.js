@@ -15,8 +15,7 @@ export default async function handler(request, response) {
       messages: [{ role: "user", content: prompt }],
     });
 
-    const completion = data.choices[0].message.content;
-
-    response.status(200).json({ output: completion });
+    response.status(200).json({ output: data });
+    console.log(data);
   }
 }
