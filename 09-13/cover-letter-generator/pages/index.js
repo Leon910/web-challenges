@@ -2,8 +2,23 @@ import styled from "styled-components";
 import { useState } from "react";
 
 export default function HomePage() {
-  const [GenerateAI, setGenerateAI] = useState([]);
+  const [GenerateAI, setGenerateAI] = useState(["GenerateAI"]);
   console.log(GenerateAI);
+  const [personalInfo, setPersonalInfo] = useState(["PersonalInfo"]);
+  console.log(personalInfo);
+  const [jobDescription, setJobDescription] = useState(["JobDescription"]);
+  console.log(jobDescription);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    console.log("Form submitted with:", { personalInfo, jobDescription });
+  };
+
+  const handleReset = (event) => {
+    setPersonalInfo("");
+    setJobDescription("");
+  };
 
   return (
     <>
