@@ -1,6 +1,10 @@
 import styled from "styled-components";
+import { useState } from "react";
 
 export default function HomePage() {
+  const [GenerateAI, setGenerateAI] = useState([]);
+  console.log(GenerateAI);
+
   return (
     <>
       <StyledForm>
