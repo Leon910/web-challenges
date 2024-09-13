@@ -2,17 +2,32 @@ import styled from "styled-components";
 import { useState } from "react";
 
 export default function HomePage() {
-  const [GenerateAI, setGenerateAI] = useState(["GenerateAI"]);
-  console.log(GenerateAI);
-  const [personalInfo, setPersonalInfo] = useState(["PersonalInfo"]);
+  const [GenerateAIAnswer, setGenerateAIAnswer] = useState([
+    "GenerateAIAnswer",
+  ]);
+  console.log(GenerateAIAnswer);
+  const [personalInfo, setPersonalInfo] = useState([]);
   console.log(personalInfo);
-  const [jobDescription, setJobDescription] = useState(["JobDescription"]);
+  const [jobDescription, setJobDescription] = useState([]);
   console.log(jobDescription);
+  const [responseMessage, setResponseMessage] = useState("");
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
+    const response = await fetch("/api/generate.js", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ personalInfo, jobDescription }),
+    });
 
-    console.log("Form submitted with:", { personalInfo, jobDescription });
+    if (response.ok) {
+      const data = await response.json();
+      setResponseMessage(data.messages);
+    } else {
+      setResponseMessage("Failed to submit");
+    }
   };
 
   const handleReset = () => {
