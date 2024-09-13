@@ -8,11 +8,10 @@ export default function HomePage() {
   console.log(personalInfo);
   const [jobDescription, setJobDescription] = useState([]);
   console.log(jobDescription);
-  const [responseMessage, setResponseMessage] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const response = await fetch("/api/generate.js", {
+    const response = await fetch("/api/generate", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -22,9 +21,9 @@ export default function HomePage() {
 
     if (response.ok) {
       const data = await response.json();
-      setResponseMessage(data.messages);
+      setGenerateAIAnswer(data.output);
     } else {
-      setResponseMessage("Failed to submit");
+      setGenerateAIAnswer("Failed to submit");
     }
   };
 
@@ -41,11 +40,21 @@ export default function HomePage() {
           <label htmlFor="personal-info">
             Enter a few words about yourself
           </label>
-          <StyledInput type="text" id="personal-info" />
+          <StyledInput
+            type="text"
+            id="personal-info"
+            value={personalInfo}
+            onChange={(event) => setPersonalInfo(event.target.value)}
+          />
           <label htmlFor="job-description">Enter the job description</label>
-          <StyledInput type="text" id="job-description" />
+          <StyledInput
+            type="text"
+            id="job-description"
+            value={jobDescription}
+            onChange={(event) => setJobDescription(event.target.value)}
+          />
           <button type="submit">Generate</button>
-          <button type="submit">Reset</button>
+          <button type="reset">Reset</button>
         </StyledFieldset>
       </StyledForm>
       <section>
