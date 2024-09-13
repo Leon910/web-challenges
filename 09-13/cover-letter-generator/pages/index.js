@@ -15,14 +15,14 @@ export default function HomePage() {
     console.log("Form submitted with:", { personalInfo, jobDescription });
   };
 
-  const handleReset = (event) => {
+  const handleReset = () => {
     setPersonalInfo("");
     setJobDescription("");
   };
 
   return (
     <>
-      <StyledForm>
+      <StyledForm onSubmit={handleSubmit} onReset={handleReset}>
         <StyledFieldset>
           <h2>Cover Letter Generator</h2>
           <label htmlFor="personal-info">
