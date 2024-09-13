@@ -11,7 +11,7 @@ export default async function handler(request, response) {
     const prompt = `Write a cover letter for a job application. Some info about the company and the position: ${jobDescription}. Some info about myself: ${personalInfo}.`;
 
     const data = await openai.chat.completions.create({
-      model: "GPT-4o mini",
+      model: "gpt-4",
       messages: [{ role: "user", content: prompt }],
     });
 
