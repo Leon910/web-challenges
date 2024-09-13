@@ -2,9 +2,7 @@ import styled from "styled-components";
 import { useState } from "react";
 
 export default function HomePage() {
-  const [GenerateAIAnswer, setGenerateAIAnswer] = useState([
-    "GenerateAIAnswer",
-  ]);
+  const [GenerateAIAnswer, setGenerateAIAnswer] = useState("");
   console.log(GenerateAIAnswer);
   const [personalInfo, setPersonalInfo] = useState([]);
   console.log(personalInfo);
@@ -50,15 +48,10 @@ export default function HomePage() {
           <button type="submit">Reset</button>
         </StyledFieldset>
       </StyledForm>
-      <StyledForm>
-        <StyledFieldset>
-          <h2>Access your personal cover letter below</h2>
-          <label htmlFor="cover-letter">
-            AI is generating your cover letter
-          </label>
-          <StyledInput type="text" id="cover-letter" />
-        </StyledFieldset>
-      </StyledForm>
+      <section>
+        <h1>Access your personal cover letter below</h1>
+        <p>{GenerateAIAnswer}</p>
+      </section>
     </>
   );
 }

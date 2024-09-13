@@ -1,9 +1,22 @@
 import OpenAI from "openai";
 
-export default function handler(request, response) {
-  response.status(200).json({ message: "Hello neuefische!" });
-}
-
 const openai = new OpenAI({
-  apiKey: process.env.OPEN_API_KEY,
+  apiKey: process.env.OPENAI_API_KEY,
 });
+
+export default async function handler(request, response) {
+  if (request.method === "POST") {
+    const { personalInfo, jobDescription } = request.body;
+
+    const prompt = `Write a cover letter for a job application. Some info about the company and the position: ${jobDescription}. Some info about myself: ${personalInfo}.`;
+
+    const data = await openai.chat.completions.create({
+      model: "GPT-4o mini",
+      messages: [{ role: "user", content: prompt }],
+    });
+
+    const completion = data.choices[0].message.content;
+
+    response.status(200).json({ output: completion });
+  }
+}
