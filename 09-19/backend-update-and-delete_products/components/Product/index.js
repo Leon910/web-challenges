@@ -13,6 +13,14 @@ export default function Product() {
 
   const { data, isLoading, mutate } = useSWR(`/api/products/${id}`);
 
+  if (isLoading) {
+    return <h1>Loading...</h1>;
+  }
+
+  if (!data) {
+    return;
+  }
+
   async function handleEditProduct(event) {
     event.preventDefault();
 
@@ -31,14 +39,6 @@ export default function Product() {
       mutate();
     }
 
-    return;
-  }
-
-  if (isLoading) {
-    return <h1>Loading...</h1>;
-  }
-
-  if (!data) {
     return;
   }
 
